@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 
-const baseUrl = "https://happy-hormones.example.com"
+const baseUrl = "https://happy-check.reload.co.jp"
 
 export const dynamic = "force-static"
 

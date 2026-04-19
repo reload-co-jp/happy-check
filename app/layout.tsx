@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import "./reset.css"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://happy-hormones.example.com"),
+  metadataBase: new URL("https://happy-check.reload.co.jp"),
   title: "幸せホルモンとは？ | セロトニン・ドーパミン・オキシトシン・エンドルフィンをやさしく解説",
   description:
     "幸せホルモンと呼ばれるセロトニン、ドーパミン、オキシトシン、エンドルフィンの違いを、初心者向けにやさしく比較して紹介します。",
@@ -36,7 +36,7 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "幸せホルモン紹介サイト",
-  url: "https://happy-hormones.example.com/",
+  url: "https://happy-check.reload.co.jp/",
   inLanguage: "ja",
 }
 
