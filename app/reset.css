@@ -1,11 +1,479 @@
+:root {
+  --bg: #fcfaf4;
+  --surface: rgba(255, 255, 255, 0.84);
+  --surface-strong: #fffdf8;
+  --text: #2f2a26;
+  --muted: #665f57;
+  --line: rgba(90, 76, 61, 0.16);
+  --shadow: 0 24px 60px rgba(145, 117, 77, 0.12);
+  --hero: radial-gradient(circle at top left, rgba(255, 212, 176, 0.8), transparent 38%),
+    radial-gradient(circle at top right, rgba(255, 238, 189, 0.9), transparent 32%),
+    linear-gradient(180deg, #fff8ec 0%, #fcfaf4 55%, #f7f1e6 100%);
+  --serotonin: #f5be7b;
+  --dopamine: #ef8f72;
+  --oxytocin: #8cc5b5;
+  --endorphins: #7ca6da;
+}
+
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 228, 178, 0.42), transparent 18%),
+    radial-gradient(circle at 85% 12%, rgba(182, 223, 214, 0.35), transparent 16%),
+    linear-gradient(180deg, #fff9f0 0%, #fcfaf4 40%, #f6efe3 100%);
+  color: var(--text);
+  font-family:
+    "Hiragino Sans",
+    "Yu Gothic",
+    "Noto Sans JP",
+    sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+ul {
   margin: 0;
 }
 
-:root {
-  background: #333;
-  color: #f0f0f0;
-  color-scheme: dark;
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: rgba(252, 250, 244, 0.84);
+  border-bottom: 1px solid rgba(98, 82, 61, 0.08);
+}
+
+.header-inner,
+.section-shell,
+.footer-inner {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4.75rem;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.brand-mark {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+.site-nav a {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  color: #5c4e44;
+  font-size: 0.92rem;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.72);
+  outline: none;
+}
+
+.site-main {
+  padding: 1.5rem 0 5rem;
+}
+
+.section-shell {
+  margin-top: 1.4rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.85fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  background: var(--hero);
+  border: 1px solid rgba(184, 149, 112, 0.18);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow,
+.section-kicker,
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  background: rgba(255, 255, 255, 0.72);
+  color: #785f4a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.hero h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.35rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.hero-lead {
+  margin-top: 1rem;
+  max-width: 40rem;
+  font-size: 1.08rem;
+}
+
+.hero-note {
+  margin-top: 1rem;
+  max-width: 42rem;
+  color: var(--muted);
+}
+
+.hero-nav {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.pill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(136, 112, 83, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(149, 122, 89, 0.08);
+}
+
+.pill span {
+  font-weight: 700;
+}
+
+.pill small {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.pill-serotonin {
+  border-left: 6px solid var(--serotonin);
+}
+
+.pill-dopamine {
+  border-left: 6px solid var(--dopamine);
+}
+
+.pill-oxytocin {
+  border-left: 6px solid var(--oxytocin);
+}
+
+.pill-endorphins {
+  border-left: 6px solid var(--endorphins);
+}
+
+.section-heading {
+  display: grid;
+  gap: 0.7rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.intro-grid,
+.card-grid,
+.lifestyle-grid,
+.about-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.intro-grid,
+.lifestyle-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.info-card,
+.hormone-card,
+.detail-card,
+.notes-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.info-card {
+  padding: 1.35rem;
+}
+
+.info-card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.hormone-card {
+  padding: 1.35rem;
+}
+
+.hormone-card h3 {
+  margin-top: 0.85rem;
+  font-size: 1.4rem;
+}
+
+.card-tagline {
+  margin-top: 0.7rem;
+  color: var(--muted);
+}
+
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.keyword-list li {
+  padding: 0.34rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+}
+
+.card-link,
+.detail-footer a {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: #7a5035;
+  font-weight: 700;
+}
+
+.details {
+  display: grid;
+  gap: 1rem;
+}
+
+.detail-card {
+  padding: 1.6rem;
+}
+
+.detail-lead {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.detail-grid h3 {
+  margin-bottom: 0.45rem;
+  font-size: 1rem;
+}
+
+.detail-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(90, 76, 61, 0.12);
+}
+
+.detail-caution {
+  color: var(--muted);
+  max-width: 44rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(90, 76, 61, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background: rgba(255, 248, 236, 0.88);
+  font-size: 0.95rem;
+}
+
+tbody th {
+  width: 12rem;
+  color: #5e5147;
+}
+
+.notes-box {
+  padding: 1.45rem;
+  background: linear-gradient(135deg, rgba(255, 241, 214, 0.9), rgba(255, 252, 246, 0.96));
+}
+
+.notes-box p + p {
+  margin-top: 0.8rem;
+}
+
+.about-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 1.35rem 0 0;
+}
+
+.tone-serotonin {
+  background:
+    linear-gradient(180deg, rgba(255, 248, 235, 0.95), rgba(255, 255, 255, 0.84)),
+    linear-gradient(120deg, rgba(245, 190, 123, 0.12), transparent 40%);
+}
+
+.tone-dopamine {
+  background:
+    linear-gradient(180deg, rgba(255, 244, 239, 0.95), rgba(255, 255, 255, 0.84)),
+    linear-gradient(120deg, rgba(239, 143, 114, 0.12), transparent 40%);
+}
+
+.tone-oxytocin {
+  background:
+    linear-gradient(180deg, rgba(242, 251, 248, 0.95), rgba(255, 255, 255, 0.84)),
+    linear-gradient(120deg, rgba(140, 197, 181, 0.14), transparent 40%);
+}
+
+.tone-endorphins {
+  background:
+    linear-gradient(180deg, rgba(242, 247, 255, 0.95), rgba(255, 255, 255, 0.84)),
+    linear-gradient(120deg, rgba(124, 166, 218, 0.14), transparent 40%);
+}
+
+.site-footer {
+  padding: 1.5rem 0 2.4rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 1024px) {
+  .hero,
+  .intro-grid,
+  .lifestyle-grid,
+  .card-grid,
+  .detail-grid,
+  .about-grid,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner,
+  .detail-footer,
+  .footer-inner {
+    display: grid;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-inner,
+  .section-shell,
+  .footer-inner {
+    width: min(1120px, calc(100% - 1rem));
+  }
+
+  .site-main {
+    padding-top: 1rem;
+  }
+
+  .hero,
+  .info-card,
+  .hormone-card,
+  .detail-card,
+  .notes-box {
+    border-radius: 22px;
+  }
+
+  .hero {
+    padding: 1.3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  th,
+  td {
+    padding: 0.8rem;
+  }
 }
