@@ -23,13 +23,13 @@ export const metadata: Metadata = {
 }
 
 const navItems = [
-  { href: "#top", label: "トップ" },
-  { href: "#serotonin", label: "セロトニン" },
-  { href: "#dopamine", label: "ドーパミン" },
-  { href: "#oxytocin", label: "オキシトシン" },
-  { href: "#endorphins", label: "エンドルフィン" },
-  { href: "#comparison", label: "比較" },
-  { href: "#notes", label: "注意事項" },
+  { href: "/#top", label: "トップ" },
+  { href: "/serotonin/", label: "セロトニン" },
+  { href: "/dopamine/", label: "ドーパミン" },
+  { href: "/oxytocin/", label: "オキシトシン" },
+  { href: "/endorphins/", label: "エンドルフィン" },
+  { href: "/#comparison", label: "比較" },
+  { href: "/#notes", label: "注意事項" },
 ]
 
 const websiteJsonLd = {

@@ -176,8 +176,8 @@ const Page = () => {
                   <li key={keyword}>{keyword}</li>
                 ))}
               </ul>
-              <a className="card-link" href={`#${hormone.id}`}>
-                詳細を見る
+              <a className="card-link" href={`/${hormone.id}/`}>
+                定性的な分析方法を見る
               </a>
             </article>
           ))}
@@ -212,10 +212,34 @@ const Page = () => {
             </div>
             <div className="detail-footer">
               <p className="detail-caution">{hormone.caution}</p>
-              <a href="#comparison">比較表へ戻る</a>
+              <div className="detail-actions">
+                <a href={`/${hormone.id}/`}>分析ページへ</a>
+                <a href="#comparison">比較表へ戻る</a>
+              </div>
             </div>
           </article>
         ))}
+      </section>
+
+      <section className="section-shell analysis-links" aria-labelledby="analysis-links-title">
+        <div className="section-heading">
+          <p className="section-kicker">定性的な分析</p>
+          <h2 id="analysis-links-title">分泌の“傾向”を日常ログで振り返る</h2>
+        </div>
+        <div className="intro-grid">
+          {hormones.map((hormone) => (
+            <article className={`info-card tone-${hormone.id}`} key={hormone.id}>
+              <h3>{hormone.name}の分析ページ</h3>
+              <p>
+                {hormone.short}
+                のイメージと関連する日常のサインを、診断ではなく振り返りの材料として整理します。
+              </p>
+              <a className="card-link" href={`/${hormone.id}/`}>
+                ページを見る
+              </a>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="section-shell comparison" id="comparison">

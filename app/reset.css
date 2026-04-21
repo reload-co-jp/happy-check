@@ -51,7 +51,8 @@ p,
 h1,
 h2,
 h3,
-ul {
+ul,
+ol {
   margin: 0;
 }
 
@@ -292,7 +293,8 @@ ul {
 }
 
 .card-link,
-.detail-footer a {
+.detail-footer a,
+.breadcrumb {
   display: inline-flex;
   margin-top: 1rem;
   color: #7a5035;
@@ -336,9 +338,117 @@ ul {
   border-top: 1px solid rgba(90, 76, 61, 0.12);
 }
 
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
 .detail-caution {
   color: var(--muted);
   max-width: 44rem;
+}
+
+.analysis-hero {
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  box-shadow: var(--shadow);
+}
+
+.analysis-hero h1 {
+  margin-top: 1rem;
+  max-width: 52rem;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+}
+
+.breadcrumb {
+  margin: 0 0 1rem;
+}
+
+.analysis-section {
+  scroll-margin-top: 6rem;
+}
+
+.analysis-grid,
+.method-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.analysis-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.method-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.method-card {
+  min-height: 10rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.step-list {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0;
+  counter-reset: step;
+  list-style: none;
+}
+
+.step-list li {
+  position: relative;
+  padding: 1rem 1rem 1rem 3.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.step-list li::before {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: #f0cfa0;
+  color: #4c392a;
+  counter-increment: step;
+  content: counter(step);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.body-list {
+  display: grid;
+  gap: 0.65rem;
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.source-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.source-list a {
+  display: inline-flex;
+  padding: 0.8rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #6f4b35;
+  font-weight: 700;
 }
 
 .table-wrap {
@@ -429,6 +539,8 @@ tbody th {
   .lifestyle-grid,
   .card-grid,
   .detail-grid,
+  .analysis-grid,
+  .method-grid,
   .about-grid,
   .footer-inner {
     grid-template-columns: 1fr;
@@ -457,6 +569,7 @@ tbody th {
   }
 
   .hero,
+  .analysis-hero,
   .info-card,
   .hormone-card,
   .detail-card,
