@@ -43,6 +43,16 @@ a {
   text-decoration: none;
 }
 
+.inline-link,
+.footer-link {
+  color: #7a5035;
+  font-weight: 700;
+}
+
+.inline-link {
+  margin-left: 0.35rem;
+}
+
 img {
   max-width: 100%;
 }

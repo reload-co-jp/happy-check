@@ -87,7 +87,12 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
         <footer className="site-footer">
           <div className="footer-inner">
             <p>幸せホルモンの違いを、一般向けにやさしく整理した静的サイトです。</p>
-            <p>運営: Reload, Inc.</p>
+            <p>
+              運営:{" "}
+              <a className="footer-link" href="https://reload.co.jp/">
+                Reload, Inc.
+              </a>
+            </p>
           </div>
         </footer>
       </body>
