@@ -1,18 +1,20 @@
 :root {
-  --bg: #fcfaf4;
-  --surface: rgba(255, 255, 255, 0.84);
-  --surface-strong: #fffdf8;
-  --text: #2f2a26;
-  --muted: #665f57;
-  --line: rgba(90, 76, 61, 0.16);
-  --shadow: 0 24px 60px rgba(145, 117, 77, 0.12);
-  --hero: radial-gradient(circle at top left, rgba(255, 212, 176, 0.8), transparent 38%),
-    radial-gradient(circle at top right, rgba(255, 238, 189, 0.9), transparent 32%),
-    linear-gradient(180deg, #fff8ec 0%, #fcfaf4 55%, #f7f1e6 100%);
-  --serotonin: #f5be7b;
-  --dopamine: #ef8f72;
-  --oxytocin: #8cc5b5;
-  --endorphins: #7ca6da;
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --surface-strong: #f6f8fa;
+  --text: #1f2328;
+  --muted: #59636e;
+  --line: #d0d7de;
+  --line-subtle: #d8dee4;
+  --link: #0969da;
+  --link-hover: #0550ae;
+  --accent: #1f883d;
+  --shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
+  --hero: linear-gradient(180deg, #ffffff 0%, #f6f8fa 100%);
+  --serotonin: #9a6700;
+  --dopamine: #cf222e;
+  --oxytocin: #1a7f37;
+  --endorphins: #0969da;
 }
 
 * {
@@ -25,10 +27,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(255, 228, 178, 0.42), transparent 18%),
-    radial-gradient(circle at 85% 12%, rgba(182, 223, 214, 0.35), transparent 16%),
-    linear-gradient(180deg, #fff9f0 0%, #fcfaf4 40%, #f6efe3 100%);
+  background: var(--bg);
   color: var(--text);
   font-family:
     "Hiragino Sans",
@@ -45,7 +44,7 @@ a {
 
 .inline-link,
 .footer-link {
-  color: #7a5035;
+  color: var(--link);
   font-weight: 700;
 }
 
@@ -75,9 +74,9 @@ ul {
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(16px);
-  background: rgba(252, 250, 244, 0.84);
-  border-bottom: 1px solid rgba(98, 82, 61, 0.08);
+  background: rgba(246, 248, 250, 0.92);
+  border-bottom: 1px solid var(--line-subtle);
+  backdrop-filter: blur(12px);
 }
 
 .header-inner,
@@ -92,7 +91,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  min-height: 4.75rem;
+  min-height: 4rem;
 }
 
 .brand {
@@ -103,7 +102,7 @@ ul {
 
 .brand-mark {
   font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -121,15 +120,16 @@ ul {
 }
 
 .site-nav a {
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  color: #5c4e44;
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  color: #24292f;
   font-size: 0.92rem;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  background: rgba(255, 255, 255, 0.72);
+  background: #eaeef2;
+  color: var(--link);
   outline: none;
 }
 
@@ -147,8 +147,8 @@ ul {
   gap: 1.5rem;
   padding: 2rem;
   background: var(--hero);
-  border: 1px solid rgba(184, 149, 112, 0.18);
-  border-radius: 32px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
   box-shadow: var(--shadow);
 }
 
@@ -158,20 +158,21 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0.3rem 0.7rem;
-  background: rgba(255, 255, 255, 0.72);
-  color: #785f4a;
+  padding: 0.25rem 0.6rem;
+  background: #ffffff;
+  color: var(--muted);
   font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
 }
 
 .hero h1 {
   margin-top: 1rem;
   font-size: clamp(2.35rem, 6vw, 4.5rem);
   line-height: 1.08;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .hero-lead {
@@ -195,11 +196,17 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  padding: 1rem 1.1rem;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(136, 112, 83, 0.12);
-  border-radius: 22px;
-  box-shadow: 0 10px 28px rgba(149, 122, 89, 0.08);
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+.pill:hover,
+.pill:focus-visible {
+  border-color: #8c959f;
+  outline: none;
 }
 
 .pill span {
@@ -261,7 +268,7 @@ ul {
 .notes-box {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 28px;
+  border-radius: 6px;
   box-shadow: var(--shadow);
 }
 
@@ -296,9 +303,10 @@ ul {
 }
 
 .keyword-list li {
-  padding: 0.34rem 0.7rem;
+  padding: 0.28rem 0.55rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
+  background: #f6f8fa;
+  border: 1px solid var(--line);
   font-size: 0.85rem;
 }
 
@@ -307,8 +315,17 @@ ul {
 .breadcrumb {
   display: inline-flex;
   margin-top: 1rem;
-  color: #7a5035;
+  color: var(--link);
   font-weight: 700;
+}
+
+.card-link:hover,
+.detail-footer a:hover,
+.breadcrumb:hover,
+.inline-link:hover,
+.footer-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
 }
 
 .details {
@@ -345,7 +362,7 @@ ul {
   align-items: flex-end;
   margin-top: 1.35rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(90, 76, 61, 0.12);
+  border-top: 1px solid var(--line-subtle);
 }
 
 .detail-actions {
@@ -362,7 +379,7 @@ ul {
 .analysis-hero {
   padding: 2rem;
   border: 1px solid var(--line);
-  border-radius: 32px;
+  border-radius: 6px;
   box-shadow: var(--shadow);
 }
 
@@ -371,7 +388,7 @@ ul {
   max-width: 52rem;
   font-size: clamp(2rem, 5vw, 3.8rem);
   line-height: 1.14;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .breadcrumb {
@@ -401,7 +418,7 @@ ul {
   padding: 1.25rem;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: 6px;
   box-shadow: var(--shadow);
 }
 
@@ -418,7 +435,7 @@ ul {
   padding: 1rem 1rem 1rem 3.4rem;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 22px;
+  border-radius: 6px;
   box-shadow: var(--shadow);
 }
 
@@ -431,8 +448,8 @@ ul {
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
-  background: #f0cfa0;
-  color: #4c392a;
+  background: #dafbe1;
+  color: #116329;
   counter-increment: step;
   content: counter(step);
   font-size: 0.85rem;
@@ -456,16 +473,21 @@ ul {
   padding: 0.8rem 1rem;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 999px;
-  color: #6f4b35;
+  border-radius: 6px;
+  color: var(--link);
   font-weight: 700;
+}
+
+.source-list a:hover {
+  background: #f6f8fa;
+  text-decoration: underline;
 }
 
 .table-wrap {
   overflow-x: auto;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 28px;
+  border-radius: 6px;
   box-shadow: var(--shadow);
 }
 
@@ -478,24 +500,25 @@ table {
 th,
 td {
   padding: 1rem;
-  border-bottom: 1px solid rgba(90, 76, 61, 0.08);
+  border-bottom: 1px solid var(--line-subtle);
   text-align: left;
   vertical-align: top;
 }
 
 thead th {
-  background: rgba(255, 248, 236, 0.88);
+  background: #f6f8fa;
   font-size: 0.95rem;
 }
 
 tbody th {
   width: 12rem;
-  color: #5e5147;
+  color: #24292f;
 }
 
 .notes-box {
   padding: 1.45rem;
-  background: linear-gradient(135deg, rgba(255, 241, 214, 0.9), rgba(255, 252, 246, 0.96));
+  background: #fff8c5;
+  border-color: #d4a72c;
 }
 
 .notes-box p + p {
@@ -508,27 +531,23 @@ tbody th {
 }
 
 .tone-serotonin {
-  background:
-    linear-gradient(180deg, rgba(255, 248, 235, 0.95), rgba(255, 255, 255, 0.84)),
-    linear-gradient(120deg, rgba(245, 190, 123, 0.12), transparent 40%);
+  background: #fff8c5;
+  border-color: #d4a72c;
 }
 
 .tone-dopamine {
-  background:
-    linear-gradient(180deg, rgba(255, 244, 239, 0.95), rgba(255, 255, 255, 0.84)),
-    linear-gradient(120deg, rgba(239, 143, 114, 0.12), transparent 40%);
+  background: #ffebe9;
+  border-color: #ff8182;
 }
 
 .tone-oxytocin {
-  background:
-    linear-gradient(180deg, rgba(242, 251, 248, 0.95), rgba(255, 255, 255, 0.84)),
-    linear-gradient(120deg, rgba(140, 197, 181, 0.14), transparent 40%);
+  background: #dafbe1;
+  border-color: #4ac26b;
 }
 
 .tone-endorphins {
-  background:
-    linear-gradient(180deg, rgba(242, 247, 255, 0.95), rgba(255, 255, 255, 0.84)),
-    linear-gradient(120deg, rgba(124, 166, 218, 0.14), transparent 40%);
+  background: #ddf4ff;
+  border-color: #54aeff;
 }
 
 .site-footer {
@@ -584,7 +603,7 @@ tbody th {
   .hormone-card,
   .detail-card,
   .notes-box {
-    border-radius: 22px;
+    border-radius: 6px;
   }
 
   .hero {

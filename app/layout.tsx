@@ -70,7 +70,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
         />
         <header className="site-header">
           <div className="header-inner">
-            <a className="brand" href="#top">
+            <a className="brand" href="/#top">
               <span className="brand-mark">Happy Hormones</span>
               <span className="brand-name">幸せホルモン紹介サイト</span>
             </a>
