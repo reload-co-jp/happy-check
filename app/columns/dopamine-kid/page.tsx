@@ -1,3 +1,6 @@
+const baseUrl = "https://happy-check.reload.co.jp"
+const pageUrl = `${baseUrl}/columns/dopamine-kid/`
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -5,7 +8,7 @@ const jsonLd = {
   description:
     "SNSやゲームの刺激に慣れた「ドパガキ」現象を入口に、セロトニン・オキシトシン・エンドルフィンという3つの選択肢を一般向けに整理します。",
   inLanguage: "ja",
-  url: "https://happy-check.reload.co.jp/columns/dopamine-kid/",
+  url: pageUrl,
   author: {
     "@type": "Organization",
     name: "Reload, Inc.",
@@ -14,8 +17,38 @@ const jsonLd = {
   publisher: {
     "@type": "Organization",
     name: "幸せホルモン紹介サイト",
-    url: "https://happy-check.reload.co.jp/",
+    url: `${baseUrl}/`,
   },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "幸せホルモン紹介サイト",
+    url: `${baseUrl}/`,
+  },
+}
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "トップ",
+      item: `${baseUrl}/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "コラム",
+      item: `${baseUrl}/columns/`,
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "「ドパガキ」の現象からみる、ドーパミン以外の幸せホルモンという選択肢",
+      item: pageUrl,
+    },
+  ],
 }
 
 const alternatives = [
@@ -56,6 +89,9 @@ export const metadata = {
     "「ドパガキ」の現象からみる、ドーパミン以外の幸せホルモンという選択肢 | 幸せホルモン紹介サイト",
   description:
     "SNSやゲームの刺激に慣れた「ドパガキ」現象を入口に、セロトニン・オキシトシン・エンドルフィンという3つの選択肢を一般向けに整理します。",
+  alternates: {
+    canonical: "/columns/dopamine-kid/",
+  },
   openGraph: {
     title: "「ドパガキ」の現象からみる、ドーパミン以外の幸せホルモンという選択肢",
     description:
@@ -78,6 +114,10 @@ const DopamineKidPage = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <section className="analysis-hero section-shell tone-dopamine">

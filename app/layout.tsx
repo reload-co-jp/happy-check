@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "幸せホルモンとは？ | セロトニン・ドーパミン・オキシトシン・エンドルフィンをやさしく解説",
   description:
     "幸せホルモンと呼ばれるセロトニン、ドーパミン、オキシトシン、エンドルフィンの違いを、初心者向けにやさしく比較して紹介します。",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "幸せホルモンとは？",
     description:
@@ -33,6 +36,7 @@ const navItems = [
   { href: "/oxytocin/", label: "オキシトシン" },
   { href: "/endorphins/", label: "エンドルフィン" },
   { href: "/#comparison", label: "比較" },
+  { href: "/columns/dopamine-kid/", label: "コラム" },
   { href: "/#notes", label: "注意事項" },
 ]
 

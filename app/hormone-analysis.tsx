@@ -200,13 +200,39 @@ export const getAnalysisPage = (id: string) => {
 }
 
 export const HormoneAnalysisPage = ({ page }: { page: AnalysisPage }) => {
+  const baseUrl = "https://happy-check.reload.co.jp"
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     name: `${page.name}の定性的な分析方法`,
     description: page.lead,
     inLanguage: "ja",
-    url: `https://happy-check.reload.co.jp${page.slug}`,
+    url: `${baseUrl}${page.slug}`,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "幸せホルモン紹介サイト",
+      url: baseUrl,
+    },
+  }
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "トップ",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: `${page.name}の分析ページ`,
+        item: `${baseUrl}${page.slug}`,
+      },
+    ],
   }
 
   return (
@@ -214,6 +240,10 @@ export const HormoneAnalysisPage = ({ page }: { page: AnalysisPage }) => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <section className={`analysis-hero section-shell tone-${page.id}`}>

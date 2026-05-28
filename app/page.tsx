@@ -306,6 +306,24 @@ const Page = () => {
         </div>
       </section>
 
+      <section className="section-shell analysis-links" aria-labelledby="columns-title">
+        <div className="section-heading">
+          <p className="section-kicker">コラム</p>
+          <h2 id="columns-title">テーマ別コラムで理解を深める</h2>
+        </div>
+        <div className="intro-grid">
+          <article className="info-card tone-dopamine">
+            <h3>「ドパガキ」の現象からみる、ドーパミン以外の幸せホルモンという選択肢</h3>
+            <p>
+              SNSやゲームの刺激に慣れた「ドパガキ」現象を入口に、セロトニン・オキシトシン・エンドルフィンという3つの選択肢を一般向けに整理します。
+            </p>
+            <a className="card-link" href="/columns/dopamine-kid/">
+              コラムを読む
+            </a>
+          </article>
+        </div>
+      </section>
+
       <section className="section-shell notes" id="notes">
         <div className="section-heading">
           <p className="section-kicker">注意事項</p>
