@@ -10,6 +10,7 @@ const pages = [
   { path: "/dopamine/", priority: 0.8 },
   { path: "/oxytocin/", priority: 0.8 },
   { path: "/endorphins/", priority: 0.8 },
+  { path: "/columns/dopamine-kid/", priority: 0.7 },
 ]
 
 const sitemap = (): MetadataRoute.Sitemap =>
