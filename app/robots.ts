@@ -8,6 +8,7 @@ const robots = (): MetadataRoute.Robots => ({
     allow: "/",
   },
   sitemap: "https://happy-check.reload.co.jp/sitemap.xml",
+  host: "https://happy-check.reload.co.jp",
 })
 
 export default robots

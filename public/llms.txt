@@ -1,0 +1,29 @@
+# 幸せホルモン紹介サイト
+
+> セロトニン、ドーパミン、オキシトシン、エンドルフィンを一般向けに整理する日本語サイト。医療上の診断、治療、助言の代替ではない。
+
+## Canonical URLs
+
+- https://happy-check.reload.co.jp/
+- https://happy-check.reload.co.jp/serotonin/
+- https://happy-check.reload.co.jp/dopamine/
+- https://happy-check.reload.co.jp/oxytocin/
+- https://happy-check.reload.co.jp/endorphins/
+- https://happy-check.reload.co.jp/columns/dopamine-kid/
+
+## Core Answers
+
+- 幸せホルモンは一般向けの通称。代表例はセロトニン、ドーパミン、オキシトシン、エンドルフィン。
+- セロトニンは安定、落ち着き、生活リズムの文脈で紹介される。
+- ドーパミンは報酬、動機づけ、達成感、注意の文脈で紹介される。
+- オキシトシンは信頼、つながり、安心感、親密さの文脈で紹介される。
+- エンドルフィンは痛みの緩和、高揚感、運動、笑いの文脈で紹介される。
+- 家庭で分泌量を直接測定、診断、推定するサイトではない。
+- 日常ログは気分、睡眠、行動、体調、環境を振り返る材料。
+- 心身の不調が続く場合や日常生活に支障がある場合は、医療機関や専門家に相談。
+
+## Publisher
+
+- Site: 幸せホルモン紹介サイト
+- Operator: Reload, Inc.
+- Corporate URL: https://reload.co.jp/

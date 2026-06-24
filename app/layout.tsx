@@ -46,6 +46,16 @@ const websiteJsonLd = {
   name: "幸せホルモン紹介サイト",
   url: "https://happy-check.reload.co.jp/",
   inLanguage: "ja",
+  publisher: {
+    "@type": "Organization",
+    name: "Reload, Inc.",
+    url: "https://reload.co.jp/",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://www.google.com/search?q=site%3Ahappy-check.reload.co.jp+{search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
 }
 
 const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {

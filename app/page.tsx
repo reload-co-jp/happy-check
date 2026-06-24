@@ -85,6 +85,29 @@ const comparisonRows = [
   },
 ]
 
+const faqs = [
+  {
+    question: "幸せホルモンとは何ですか？",
+    answer:
+      "幸せホルモンは、気分や行動、人とのつながり、痛みの感じ方などに関わる物質を一般向けにまとめた通称です。代表例としてセロトニン、ドーパミン、オキシトシン、エンドルフィンがあります。",
+  },
+  {
+    question: "4つの幸せホルモンの違いは何ですか？",
+    answer:
+      "セロトニンは安定や落ち着き、ドーパミンは報酬や動機づけ、オキシトシンは信頼やつながり、エンドルフィンは痛みの緩和や高揚感の文脈で紹介されます。",
+  },
+  {
+    question: "幸せホルモンは増やせますか？",
+    answer:
+      "家庭で分泌量を直接判断することはできません。睡眠、運動、人との交流、日光を浴びる時間など日常の状態を記録し、傾向として振り返る方法が安全です。",
+  },
+  {
+    question: "このサイトは医療情報ですか？",
+    answer:
+      "このサイトは一般向けの教育コンテンツです。診断、治療、医療助言の代替ではありません。不調が続く場合は医療機関や専門家に相談してください。",
+  },
+] as const
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -96,6 +119,14 @@ const jsonLd = {
     "@type": "Thing",
     name: hormone.name,
     description: hormone.summary,
+  })),
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
   })),
 }
 
@@ -337,6 +368,21 @@ const Page = () => {
           <p>
             心身の不調が続く場合や日常生活に支障がある場合は、医療機関や専門家への相談をご検討ください。
           </p>
+        </div>
+      </section>
+
+      <section className="section-shell analysis-section" id="faq" aria-labelledby="faq-title">
+        <div className="section-heading">
+          <p className="section-kicker">FAQ</p>
+          <h2 id="faq-title">幸せホルモンについてよくある質問</h2>
+        </div>
+        <div className="analysis-grid">
+          {faqs.map((faq) => (
+            <article className="info-card" key={faq.question}>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
         </div>
       </section>
 

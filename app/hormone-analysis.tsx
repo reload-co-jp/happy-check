@@ -214,6 +214,29 @@ export const HormoneAnalysisPage = ({ page }: { page: AnalysisPage }) => {
       name: "幸せホルモン紹介サイト",
       url: baseUrl,
     },
+    reviewedBy: {
+      "@type": "Organization",
+      name: "Reload, Inc.",
+      url: "https://reload.co.jp/",
+    },
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `${page.name}の分泌量は日常ログで測定できますか？`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${page.name}の分泌量を日常ログから直接測定することはできません。気分、行動、体調、環境を同じ尺度で記録し、傾向として振り返ります。`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `${page.name}を見るときの注意点は何ですか？`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `${page.name}だけで不調や行動を説明しないことです。睡眠、疲労、ストレス、環境、人間関係など複数の要因を一緒に見ます。`,
+        },
+      },
+    ],
   }
 
   const breadcrumbJsonLd = {
@@ -337,6 +360,29 @@ export const HormoneAnalysisPage = ({ page }: { page: AnalysisPage }) => {
         </div>
         <div className="notes-box">
           <p>{page.consult}</p>
+        </div>
+      </section>
+
+      <section className="section-shell analysis-section" id="faq">
+        <div className="section-heading">
+          <p className="section-kicker">FAQ</p>
+          <h2>{page.name}の分析でよくある質問</h2>
+        </div>
+        <div className="analysis-grid">
+          <article className="info-card">
+            <h3>{page.name}の分泌量は日常ログで測定できますか？</h3>
+            <p>
+              {page.name}
+              の分泌量を日常ログから直接測定することはできません。気分、行動、体調、環境を同じ尺度で記録し、傾向として振り返ります。
+            </p>
+          </article>
+          <article className="info-card">
+            <h3>{page.name}を見るときの注意点は何ですか？</h3>
+            <p>
+              {page.name}
+              だけで不調や行動を説明しないことです。睡眠、疲労、ストレス、環境、人間関係など複数の要因を一緒に見ます。
+            </p>
+          </article>
         </div>
       </section>
 

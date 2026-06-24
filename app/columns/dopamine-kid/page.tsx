@@ -1,31 +1,6 @@
 const baseUrl = "https://happy-check.reload.co.jp"
 const pageUrl = `${baseUrl}/columns/dopamine-kid/`
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "「ドパガキ」の現象からみる、ドーパミン以外の幸せホルモンという選択肢",
-  description:
-    "SNSやゲームの刺激に慣れた「ドパガキ」現象を入口に、セロトニン・オキシトシン・エンドルフィンという3つの選択肢を一般向けに整理します。",
-  inLanguage: "ja",
-  url: pageUrl,
-  author: {
-    "@type": "Organization",
-    name: "Reload, Inc.",
-    url: "https://reload.co.jp/",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "幸せホルモン紹介サイト",
-    url: `${baseUrl}/`,
-  },
-  isPartOf: {
-    "@type": "WebSite",
-    name: "幸せホルモン紹介サイト",
-    url: `${baseUrl}/`,
-  },
-}
-
 const breadcrumbJsonLd = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -83,6 +58,52 @@ const alternatives = [
     href: "/endorphins/",
   },
 ]
+
+const faqs = [
+  {
+    question: "ドパガキとは何ですか？",
+    answer:
+      "ドパガキは、SNSやゲームなどの強い即時報酬に慣れ、刺激の少ない活動を退屈に感じやすい状態を指すインターネットスラングです。医学的な診断名ではありません。",
+  },
+  {
+    question: "ドーパミン以外の幸せホルモンには何がありますか？",
+    answer:
+      "セロトニン、オキシトシン、エンドルフィンがあります。セロトニンは安定、オキシトシンはつながり、エンドルフィンは痛みの緩和や高揚感の文脈で紹介されます。",
+  },
+] as const
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "「ドパガキ」の現象からみる、ドーパミン以外の幸せホルモンという選択肢",
+  description:
+    "SNSやゲームの刺激に慣れた「ドパガキ」現象を入口に、セロトニン・オキシトシン・エンドルフィンという3つの選択肢を一般向けに整理します。",
+  inLanguage: "ja",
+  url: pageUrl,
+  author: {
+    "@type": "Organization",
+    name: "Reload, Inc.",
+    url: "https://reload.co.jp/",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "幸せホルモン紹介サイト",
+    url: `${baseUrl}/`,
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "幸せホルモン紹介サイト",
+    url: `${baseUrl}/`,
+  },
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+}
 
 export const metadata = {
   title:
@@ -283,6 +304,21 @@ const DopamineKidPage = () => {
             気分の落ち込み、集中困難、依存的な行動パターンが日常生活に支障をきたしている場合は、
             医療機関や専門家への相談をご検討ください。
           </p>
+        </div>
+      </section>
+
+      <section className="section-shell analysis-section" id="faq">
+        <div className="section-heading">
+          <p className="section-kicker">FAQ</p>
+          <h2>ドパガキと幸せホルモンのよくある質問</h2>
+        </div>
+        <div className="analysis-grid">
+          {faqs.map((faq) => (
+            <article className="info-card" key={faq.question}>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
         </div>
       </section>
     </>
